@@ -1,14 +1,56 @@
 <!DOCTYPE html>
 <html ng-app="expressly">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--bowerStyles-->
-    <!--styles-->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--bowerStyles-->
+	<!--styles-->
 </head>
 <body>
-<div class="container" ng-view></div>
-<!--scripts-->
-<!--config-->
+
+	<div class="container">
+		<md-fab-toolbar
+			md-direction="right"
+			ng-init="state.opened = false"
+			md-open="state.opened"
+			ng-mouseenter="state.opened = true"
+			ng-mouseleave="state.opened = false">
+
+			<md-fab-trigger class="align-with-text">
+				<md-button aria-label="menu" class="md-fab md-primary">
+					<md-icon md-svg-src="menu"></md-icon>
+				</md-button>
+			</md-fab-trigger>
+
+			<md-toolbar>
+				<md-fab-actions class="md-toolbar-tools">
+					<md-button aria-label="home" class="md-icon-button">
+						<a href="#/"><md-icon md-svg-icon="home" title="Show all images"></md-icon></a>
+					</md-button>
+					<md-button aria-label="google" class="md-icon-button">
+						<a href="https://google.com" target="_blank"><md-icon md-svg-icon="google" title="Go to Google"></md-icon></a>
+					</md-button>
+				</md-fab-actions>
+			</md-toolbar>
+
+		</md-fab-toolbar>
+
+		<md-content ng-view></md-content>
+	</div>
+
+	<footer>
+		<md-toolbar>
+			<div class="md-toolbar-tools">
+				<a href="https://github.com/sbervinov/angular-browserify-seed" flex="20" title="Go to GitHub">
+					<ng-md-icon icon="github-circle" size="36"></ng-md-icon>
+				</a>
+				<h3 flex>Sergey</h3>
+				<span flex="20"></span>
+			</div>
+		</md-toolbar>
+	</footer>
+
+	<!--scripts-->
+	<!--config-->
 </body>
 </html>

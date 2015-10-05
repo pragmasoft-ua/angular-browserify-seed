@@ -2,21 +2,51 @@
 @import "imports";
 
 body {
-  text-align: center;
-  color: #222;
+	text-align: center;
+	color: $base-text-color;
 }
 
-.welcome {
-  width: 300px;
-  height: 510px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin-left: -150px;
-  margin-top: -255px;
+.container {
+	min-height: 100%;
+	margin: 0 auto $toolbar-height * -1;
+}
+
+.container:after {
+	height: $toolbar-height;
+	content: "";
+	display: block;
+}
+
+footer {
+	height: $toolbar-height;
+
+	a {
+		text-align: left;
+
+		ng-md-icon {
+			fill: white;
+		}
+	}
 }
 
 a, a:visited {
-  text-decoration: none;
+	text-decoration: none;
 }
 
+md-content {
+	margin: 7px;
+}
+
+.cards-container {
+	max-width: 960px;
+
+	md-card-content {
+		.album-icon {
+			margin-top: 12px;
+		}
+
+		ng-md-icon {
+			fill: $base-text-color;
+		}
+	}
+}

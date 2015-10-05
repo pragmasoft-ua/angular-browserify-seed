@@ -1,22 +1,27 @@
-'use strict';
+"use strict";
 
-module.exports =
-    angular.module('expressly', [
-        'ngRoute',
-        'ngAnimate',
-        'ngAria',
-        'ngMaterial',
-        'pascalprecht.translate',
+module.exports = angular
+	.module("expressly", [
+		"expressly.config",
 
-        // html templates in $templateCache
-        require('../../../tmp/templates').name,
+		"ngRoute",
+		"ngAnimate",
+		"ngAria",
+		"ngMaterial",
+		"ngMdIcons",
 
-        // common directives, filters, services
-        require('../common').name,
+		// html templates in $templateCache
+		require("../../../tmp/templates").name,
 
-        // modules
-        require('./foo').name
-    ])
-        .config(/*@ngInject*/ function ($translateProvider) {
-            $translateProvider.preferredLanguage('en');
-        });
+		// common directives, filters, services
+		require("../common").name,
+
+		// modules
+		require("./gallery").name
+	])
+
+	.config(/*@ngInject*/ function ($mdIconProvider) {
+		$mdIconProvider.icon("menu", "../../assets/img/ic_menu_white_48px.svg", 48);
+		$mdIconProvider.icon("home", "../../assets/img/ic_home_white_48px.svg", 48);
+		$mdIconProvider.icon("google", "../../assets/img/ic_search_white_48px.svg", 48);
+	});

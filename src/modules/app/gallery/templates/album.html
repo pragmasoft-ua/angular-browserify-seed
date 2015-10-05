@@ -1,0 +1,14 @@
+<div layout layout-align="center">
+	<md-progress-circular ng-hide="loaded" md-mode="indeterminate"></md-progress-circular>
+
+	<div ng-show="loaded" layout="row" layout-wrap class="cards-container" when-scrolled="loadMore()">
+		<div ng-repeat="image in albumImages" flex-sm="100" flex-md="50" flex-gt-md="33">
+			<md-card>
+				<a ng-href="#/image/{{image.id}}" title="Show image"><img ng-src="{{image.thumbnailUrl}}" class="md-card-image"></a>
+				<md-card-content>
+					<div class="md-title">{{image.title}}</div>
+				</md-card-content>
+			</md-card>
+		</div>
+	</div>
+</div>

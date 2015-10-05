@@ -1,5 +1,5 @@
-'use strict';
+"use strict";
 
-module.exports =
-    angular.module('expressly.common.directives', [])
-        .directive('exampleDirective', require('./example.directive'));
+module.exports = angular
+	.module("expressly.common.directives", [])
+	.directive("whenScrolled", require("./whenScrolled.directive.js"));
